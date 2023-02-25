@@ -118,6 +118,7 @@ namespace PM100calib
 
             logWriter.Close();
             csvWriter.Close();
+            pm.SelectAutoRange();
             return 0;
 
             /***************************************************/
