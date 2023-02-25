@@ -45,6 +45,7 @@ namespace PM100calib
                 options.UserComment = "---";
             }
 
+            pm.DeselectAutoRange();
             pm.SetMeasurementRange(MeasurementRange.Range03);
 
             DisplayOnly("");
