@@ -35,6 +35,12 @@ namespace PM100calib
 
             DateTime timeStamp = DateTime.UtcNow;
             ThorlabsPM pm = new ThorlabsPM(dpm.FirstDevice);
+            if(pm.InstrumentType!= "PM100D" && !options.NoStrict)
+            {
+                DisplayOnly("This is not an PM100D instrument!");
+                return 2;
+            }
+
             StreamWriter logWriter = new StreamWriter(options.LogFileName+".log", true);
             StreamWriter csvWriter = new StreamWriter(options.LogFileName+".csv", false);
             StatisticPod stpCurrent = new StatisticPod("Current in A");
