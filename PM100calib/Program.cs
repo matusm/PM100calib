@@ -158,9 +158,9 @@ namespace PM100calib
                 DisplayOnly("");
             }
             /***************************************************/
-            string CsvHeader() => $"measurement number, range, sample size, specification (A), measured current (A), standard deviation (A), test current (A), standard uncertainty (A)";
+            string CsvHeader() => $"measurement number, range, specification (A), measured current (A), standard deviation (A), test current (A), standard uncertainty (A)";
             /***************************************************/
-            string CsvLine(int index) => $"{index}, {pm.GetMeasurementRange()}, {stpCurrent.SampleSize}, {pm.GetSpecification(stpCurrent.AverageValue, pm.GetMeasurementRange())}, {stpCurrent.AverageValue}, {stpCurrent.StandardDeviation}, {"[TestCurrent]"}, {"[u(TestCurrent)]"}";
+            string CsvLine(int index) => $"{index}, {pm.GetMeasurementRange()}, {pm.GetSpecification(stpCurrent.AverageValue, pm.GetMeasurementRange())}, {stpCurrent.AverageValue}, {stpCurrent.StandardDeviation}, {"[TestCurrent]"}, {"[u(TestCurrent)]"}";
             /***************************************************/
             void CsvLog(string line)
             {
